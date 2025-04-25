@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Khade - Digital Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+            background: #f3f4f6;
+        }
+        .navbar {
+            background: linear-gradient(to right, #1e3a8a, #3b82f6);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+        }
+        .section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+        }
+        .typing-text::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-card, .skill-card, .contact-box, .certificate-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover, .skill-card:hover, .contact-box:hover, .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary {
+            background: #1e40af;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background: #1e3a8a;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background: #ffffff;
+            color: #1e40af;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background: #f3f4f6;
+            transform: scale(1.05);
+        }
+        .form-input {
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #1e40af;
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
+        }
+        .contact-box {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+        .profile-img {
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .social-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+        .home-social .social-icon {
+            color: #ffffff;
+        }
+        .home-social .social-icon:hover {
+            color: #93c5fd;
+        }
+        .contact-social .social-icon {
+            color: #1e3a8a;
+        }
+        .contact-social .social-icon:hover {
+            color: #1e40af;
+        }
+        .footer-social .social-icon {
+            color: #ffffff;
+        }
+        .footer-social .social-icon:hover {
+            color: #93c5fd;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+    <nav class="navbar text-white py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">PORTFOLIO</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-gray-200 transition text-lg">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-200 transition text-lg">About</a></li>
+                <li><a href="#skills" class="hover:text-gray-200 transition text-lg">Skills</a></li>
+                <li><a href="#education" class="hover:text-gray-200 transition text-lg">Education</a></li>
+                <li><a href="#certificates" class="hover:text-gray-200 transition text-lg">Certificates</a></li>
+                <li><a href="#contact" class="hover:text-gray-200 transition text-lg">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Home Section -->
+    <section id="home" class="section flex items-center bg-gradient-to-r from-[#1e40af] to-[#60a5fa] text-white">
+        <div class="container mx-auto text-center fade-in">
+            <img src="soham.jpg" alt="Soham Khade" class="profile-img mx-auto mb-6">
+            <h1 class="text-5xl font-bold mb-4">Hi, I'm Soham Khade</h1>
+            <p class="text-2xl mb-6">
+                I'm a <span class="typing-text">Web Developer</span>
+            </p>
+            <a href="#contact" class="btn-secondary">Let's Connect</a>
+            <div class="home-social flex justify-center space-x-6 mt-6">
+                <a href="mailto:sohamkhade@gmail.com" class="text-3xl social-icon">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/sohamkhade" class="text-3xl social-icon">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com/sohamkhade" class="text-3xl social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+    <section id="about" class="section bg-white">
+        <div class="container mx-auto text-center fade-in">
+            <h2 class="text-4xl font-bold mb-6 text-[#1e3a8a]">About Me</h2>
+            <p class="text-lg max-w-3xl mx-auto mb-6 text-gray-700">
+                I'm a 1st-year Computer Science Engineering student with a burning passion for transforming ideas into digital realities. My journey is driven by an insatiable curiosity to learn, create, and innovate in the world of technology. Beyond coding, I enjoy capturing moments through photography and sharing my experiences on YouTube.
+            </p>
+            <a href="path/to/soham-resume.pdf" download class="btn-primary">Download Resume</a>
+        </div>
+    </section>
+
+<!-- Skills Section -->
+    <section id="skills" class="section bg-[#f3f4f6]">
+        <div class="container mx-auto text-center fade-in">
+            <h2 class="text-4xl font-bold mb-6 text-[#1e3a8a]">My Skills & Passions</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Web Development</h3>
+                    <p class="text-gray-600">Mastering HTML, CSS, and JavaScript while exploring React. Building projects to bring ideas to life in the browser.</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Backend Development</h3>
+                    <p class="text-gray-600">Learning server-side programming with Node.js and database concepts. Excited to build full-stack applications.</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Mobile Development</h3>
+                    <p class="text-gray-600">Exploring mobile development with Flutter. Experimenting with basic cross-platform apps.</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Photography</h3>
+                    <p class="text-gray-600">Developing skills through practice, learning composition techniques, and capturing campus life and landscapes.</p>
+                </div>
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">YouTube Content Creation</h3>
+                    <p class="text-gray-600">Sharing my journey and projects through engaging videos, learning editing and storytelling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Education Section -->
+    <section id="education" class="section bg-white">
+        <div class="container mx-auto text-center fade-in">
+            <h2 class="text-4xl font-bold mb-6 text-[#1e3a8a]">My Educational Journey</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-[#f3f4f6] p-6 rounded-lg shadow-md mb-6 text-left">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Bachelor of Technology in Computer Science</h3>
+                    <p class="text-gray-600">MIT Academy of Engineering, Alandi</p>
+                    <p class="text-gray-600">2024 - 2028 | CGPA: 7.75</p>
+                    <p class="text-gray-600 mt-2">Currently pursuing my degree with a focus on Artifitial Intelligence and Cloud Computing.</p>
+                </div>
+                <div class="bg-[#f3f4f6] p-6 rounded-lg shadow-md text-left">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Higher Secondary</h3>
+                    <p class="text-gray-600">2022 | Percentage: 70%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Certificates Section -->
+    <section id="certificates" class="section bg-[#f3f4f6]">
+        <div class="container mx-auto text-center fade-in">
+            <h2 class="text-4xl font-bold mb-6 text-[#1e3a8a]">My Certificates</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="certificate-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Artifitial Intelligence</h3>
+                    <p class="text-gray-600">Completed: June 2024 | Issued by: Nasscom</p>
+                    <img src="nasscom.jpg" alt="nasscom" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="certificate-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Python Fundamentals</h3>
+                    <p class="text-gray-600">Completed: August 2024 | Issued by: Cisco</p>
+                    <img src="python.jpg" alt="python" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="certificate-card bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-[#1e40af]">Introduction to Cloud Computing</h3>
+                    <p class="text-gray-600">Completed: October 2024 | Issued by: NPTEL</p>
+                    <img src="nptel.jpg" alt="nptel" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+    <section id="contact" class="section bg-gradient-to-r from-[#1e40af] to-[#60a5fa] text-white">
+        <div class="container mx-auto fade-in">
+            <h2 class="text-4xl font-bold text-center mb-12">Let's Connect</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+
+<!-- Contact Info Subsection -->
+                <div class="flex-1 max-w-lg contact-box">
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-[#1e3a8a]">Contact Information</h3>
+                    <p class="text-lg mb-6 text-center text-gray-700">
+                        Reach out directly or connect with me on social media!
+                    </p>
+                    <div class="contact-social flex justify-center space-x-6 mb-6">
+                        <a href="mailto:sohamkhade@gmail.com" class="text-3xl social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/sohamkhade" class="text-3xl social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://instagram.com/sohamkhade" class="text-3xl social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="text-lg text-center text-gray-700">Email: sohamkhade@gmail.com</p>
+                    <p> <br> </p>
+                    <p class="text-lg text-center text-gray-700">Contact: (+91) 90286 42700</p>
+                    <p> <br> </p>
+                    <p class="text-lg text-center text-gray-700">Address: Pune, India</p>
+                </div>
+
+<!-- Get in Touch Subsection -->
+                <div class="flex-1 max-w-lg contact-box">
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-[#1e3a8a]">Get in Touch</h3>
+                    <p class="text-lg mb-6 text-center text-gray-700">
+                        Have a project in mind or want to collaborate? Drop me a message!
+                    </p>
+                    <form>
+                        <input type="text" placeholder="Your Name" class="form-input" required>
+                        <input type="email" placeholder="Your Email" class="form-input" required>
+                        <textarea placeholder="Your Message" class="form-input" rows="5" required></textarea>
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="bg-[#1e3a8a] text-white text-center py-4">
+        <p>© 2025 Soham Khade. All Rights Reserved.</p>
+        <div class="footer-social flex justify-center space-x-4 mt-2">
+            <a href="mailto:sohamkhade@gmail.com" class="text-xl social-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://linkedin.com/in/sohamkhade" class="text-xl social-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com/sohamkhade" class="text-xl social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+<!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Typing Animation and Scroll Effects -->
+    <script>
+        // Typing Animation
+        const texts = ['Web Developer ', 'Photographer ', 'Youtuber '];
+        let index = 0;
+        let charIndex = 0;
+        let currentText = '';
+        let isDeleting = false;
+        const typingText = document.querySelector('.typing-text');
+
+        function type() {
+            if (isDeleting) {
+                currentText = texts[index].substring(0, charIndex--);
+            } else {
+                currentText = texts[index].substring(0, charIndex++);
+            }
+
+            typingText.textContent = currentText;
+
+            if (!isDeleting && charIndex === texts[index].length) {
+                isDeleting = true;
+                setTimeout(type, 1000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                index = (index + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, isDeleting ? 50 : 100);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            type();
+        });
+
+        // Fade-in Animation on Scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => observer.observe(element));
+    </script>
+</body>
+</html>
